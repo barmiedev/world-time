@@ -10,7 +10,7 @@ const fetchTime: QueryFunction<TimeAPIResponse, ["timezone", string]> = async ({
   }
 
   const apiRes = await fetch(
-    `http://worldtimeapi.org/api/timezone/${timezone}/`
+    `https://worldtimeapi.org/api/timezone/${timezone}/`
   );
 
   if (!apiRes.ok) {

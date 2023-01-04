@@ -27,7 +27,7 @@ const App = () => {
   >();
 
   useEffect(() => {
-    fetch("http://worldtimeapi.org/api/timezone/")
+    fetch("https://worldtimeapi.org/api/timezone/")
       .then((response) => {
         if (response.ok) return response.json();
         throw new Error(`Problem with fetching the timezones`);
