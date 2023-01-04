@@ -27,7 +27,7 @@ const App = () => {
   >();
 
   useEffect(() => {
-    fetch("http://worldtimeapi.org/api/timezone")
+    fetch("http://worldtimeapi.org/api/timezone/")
       .then((response) => response.json())
       .then((data) => setRegions(data));
   }, []);
