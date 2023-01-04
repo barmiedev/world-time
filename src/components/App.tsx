@@ -28,8 +28,12 @@ const App = () => {
 
   useEffect(() => {
     fetch("http://worldtimeapi.org/api/timezone/")
-      .then((response) => response.json())
-      .then((data) => setRegions(data));
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error(`Problem with fetching the timezones`);
+      })
+      .then((data) => setRegions(data))
+      .catch((error) => console.log(error));
   }, []);
 
   useEffect(() => {
